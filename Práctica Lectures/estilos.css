@@ -1,0 +1,55 @@
+.fondo {
+    background-color: rgb(108, 158, 110);
+}
+
+.miTexto {
+    color: crimson;
+    font-size: 3em;
+    font-family: Arial, sans-serif;
+    background-color: green;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 1em;
+    width: fit-content;
+    margin-top: 1em;
+    border-radius: 10%;
+}
+
+.card:hover {
+    background-color: lightgray;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#principal {
+    text-decoration: underline;
+    font-size: 4em;
+}
+
+#titulos {
+    text-align: center;
+    border: 2px solid black;
+    width: 60vw;
+    margin: auto;
+    padding: 3em;
+}
+
+#imagenes {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    justify-content: center;    
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 2em;  
+    border: 2px solid black;
+    border-radius: 10%;
+    padding: 2em; 
+}
