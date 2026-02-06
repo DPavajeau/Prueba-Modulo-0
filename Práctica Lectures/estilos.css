@@ -20,6 +20,7 @@
     width: fit-content;
     margin-top: 1em;
     border-radius: 10%;
+    align-items: center;
 }
 
 .card:hover {
@@ -35,10 +36,12 @@
 
 #titulos {
     text-align: center;
-    border: 2px solid black;
     width: 60vw;
     margin: auto;
     padding: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 #imagenes {

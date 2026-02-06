@@ -1,47 +1,82 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+/* =========================================
+   Reset mejorado (base consistente)
+   - Quita márgenes/paddings/bordes por defecto
+   - Define box-sizing global
+   - Elimina interlineado por defecto (line-height normal) fijándolo
+   ========================================= */
+
+/* 1) Box model consistente */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
+/* 2) Reset de márgenes y paddings (mejor que enumerar tags) */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3) Base tipográfica: herencia y sin “normal” implícito */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;          /* ✅ Esto quita el interlineado por defecto del navegador */
+  font-family: inherit;
+  font-size: 1rem;
 }
 
+/* 4) Elementos semánticos como bloque (redundante en modernos, pero seguro) */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* 5) Listas sin viñetas (base “cero”) */
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 
+/* 6) Citas sin comillas automáticas */
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: "";
 }
 
+/* 7) Tablas consistentes */
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 8) Medios: evita espacios raros e imágenes responsivas por defecto */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 9) Formularios: tipografía consistente */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 10) Enlaces: sin estilos por defecto, tú decides luego */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 11) Texto preformateado y código: monospace estable */
+pre, code, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
 }
