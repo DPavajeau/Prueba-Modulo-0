@@ -1,11 +1,11 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "../02. JS Bases/generadorContrasenas.js":
+/***/ "../02. JS Bases/generadorContrasenas.js"
 /*!***********************************************!*\
   !*** ../02. JS Bases/generadorContrasenas.js ***!
   \***********************************************/
-/***/ ((module) => {
+(module) {
 
 function checkLongitud(longitud) {
   if (longitud.length === 0) return "debe ingresar la longitud";
@@ -20,7 +20,7 @@ function generarContrasena(longitud, incluirEspeciales, incluirNumeros, incluirM
 
   var numeros = "0123456789";
 
-  var especiales = "!@#$%^&*()+=-?></:;_";
+  var especiales = "!@#$%^&*()+=-?></:;_[]{}|";
 
   var letrasMayusculas = letras.toUpperCase();
 
@@ -51,13 +51,13 @@ module.exports = {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "../03. JS Bucles/cajaFuerte.js":
+/***/ "../03. JS Bucles/cajaFuerte.js"
 /*!**************************************!*\
   !*** ../03. JS Bucles/cajaFuerte.js ***!
   \**************************************/
-/***/ ((module) => {
+(module) {
 
 function cajaFuerte(codigoSecreto, cantidadIntentos) {
   if (codigoSecreto.length !== 4)
@@ -127,13 +127,13 @@ module.exports = {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "../04. JS Arrays/monitoreoActividad.js":
+/***/ "../04. JS Arrays/monitoreoActividad.js"
 /*!**********************************************!*\
   !*** ../04. JS Arrays/monitoreoActividad.js ***!
   \**********************************************/
-/***/ ((module) => {
+(module) {
 
 // <------- Arreglo de actividades sospechozas -----> modificar el valor de ser necesario
 var actividadesSospechozas = [];
@@ -211,13 +211,13 @@ module.exports = {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "../05. JS Objetos/gestionUsuarios.js":
+/***/ "../05. JS Objetos/gestionUsuarios.js"
 /*!********************************************!*\
   !*** ../05. JS Objetos/gestionUsuarios.js ***!
   \********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 // <----- NO TOCAR ------->
 const { perfiles } = __webpack_require__(/*! ../build/js/perfiles.js */ "./js/perfiles.js");
@@ -277,13 +277,13 @@ module.exports = {
 };
 
 
-/***/ }),
+/***/ },
 
-/***/ "./js/cajaFuerteDOM.js":
+/***/ "./js/cajaFuerteDOM.js"
 /*!*****************************!*\
   !*** ./js/cajaFuerteDOM.js ***!
   \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 const { cajaFuerte,desbloquearCajaFuerte,validarNumerosRepetidos} = __webpack_require__(/*! ../../03. JS Bucles/cajaFuerte.js */ "../03. JS Bucles/cajaFuerte.js")
 
@@ -354,13 +354,13 @@ module.exports = {
   cajaFuerteDOM
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./js/genContrasenasDOM.js":
+/***/ "./js/genContrasenasDOM.js"
 /*!*********************************!*\
   !*** ./js/genContrasenasDOM.js ***!
   \*********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 const {checkLongitud , generarContrasena } = __webpack_require__(/*! ../../02. JS Bases/generadorContrasenas.js */ "../02. JS Bases/generadorContrasenas.js")
 
@@ -390,13 +390,13 @@ module.exports = {
   passGenDOM
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./js/gestionUsuariosDOM.js":
+/***/ "./js/gestionUsuariosDOM.js"
 /*!**********************************!*\
   !*** ./js/gestionUsuariosDOM.js ***!
   \**********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 const { asistente } = __webpack_require__(/*! ../../05. JS Objetos/gestionUsuarios.js */ "../05. JS Objetos/gestionUsuarios.js")
 
@@ -485,13 +485,13 @@ module.exports = {
     gestionUsuariosDOM 
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./js/monitoreoActividadDOM.js":
+/***/ "./js/monitoreoActividadDOM.js"
 /*!*************************************!*\
   !*** ./js/monitoreoActividadDOM.js ***!
   \*************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+(module, __unused_webpack_exports, __webpack_require__) {
 
 const { agregarActividad, eliminarActividad, filtrarActividadesPorRiesgo, generarReporteDeActividades } = __webpack_require__(/*! ../../04. JS Arrays/monitoreoActividad.js */ "../04. JS Arrays/monitoreoActividad.js")
 
@@ -565,13 +565,13 @@ module.exports = {
     monitoreoActividadDOM 
 }
 
-/***/ }),
+/***/ },
 
-/***/ "./js/perfiles.js":
+/***/ "./js/perfiles.js"
 /*!************************!*\
   !*** ./js/perfiles.js ***!
   \************************/
-/***/ ((module) => {
+(module) {
 
 var perfiles = [
   { usuario: "Alice", codigo: 1234, nivel_de_autorizacion: "bajo", antiguedad: 12 },
@@ -595,7 +595,7 @@ module.exports = {
   perfiles
 }
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -608,6 +608,12 @@ module.exports = {
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {

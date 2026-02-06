@@ -11,7 +11,7 @@ function generarContrasena(longitud, incluirEspeciales, incluirNumeros, incluirM
 
   var numeros = "0123456789";
 
-  var especiales = "!@#$%^&*()+=-?></:;_";
+  var especiales = "!@#$%^&*()+=-?></:;_[]{}|";
 
   var letrasMayusculas = letras.toUpperCase();
 
